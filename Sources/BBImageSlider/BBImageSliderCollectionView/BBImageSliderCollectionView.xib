@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BBImageSliderCollectionView" customModule="BBImageSlider">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BBImageSliderCollectionView" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="qff-Uz-Znq" id="P0t-1a-HJc"/>
                 <outlet property="pageController" destination="CW8-oC-iJd" id="muJ-y5-2Ks"/>
