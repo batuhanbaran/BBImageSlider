@@ -32,7 +32,7 @@ open class BBImageSliderCollectionView: UIView {
     }
     
     private func configureView() {
-        let bundle = Bundle(for: type(of: self))
+        let bundle = Bundle.module
         let nib = UINib(nibName: "BBImageSliderCollectionView", bundle: bundle)
         if let nibView = nib.instantiate(withOwner: self, options: nil).first as? UIView {
             nibView.frame = self.bounds
