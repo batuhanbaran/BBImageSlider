@@ -14,7 +14,7 @@ open class BBImageSliderCollectionView: UIView {
     // MARK:- IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
-            collectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: .module), forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
+            collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
         }
     }
     @IBOutlet private weak var pageController: UIPageControl!
