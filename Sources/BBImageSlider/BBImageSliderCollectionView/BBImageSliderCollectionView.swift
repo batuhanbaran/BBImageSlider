@@ -32,12 +32,9 @@ open class BBImageSliderCollectionView: UIView {
     }
     
     private func configureView() {
-        let bundle = Bundle.module
-        let nib = UINib(nibName: "BBImageSliderCollectionView", bundle: bundle)
-        if let nibView = nib.instantiate(withOwner: self, options: nil).first as? UIView {
-            nibView.frame = self.bounds
-            self.addSubview(nibView)
-        }
+        guard let view = self.loadFromNib(nibName: "BBImageSliderCollectionView") else { return }
+        view.frame = self.bounds
+        self.addSubview(view)
         
         collectionView.delegate = self
         collectionView.dataSource = self
