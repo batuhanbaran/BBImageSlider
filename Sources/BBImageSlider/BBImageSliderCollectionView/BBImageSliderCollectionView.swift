@@ -12,7 +12,7 @@ import UIKit
 open class BBImageSliderCollectionView: UIView {
     
     // MARK:- IBOutlets
-    @IBOutlet private weak var collectionView: UICollectionView! {
+    @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
@@ -20,7 +20,7 @@ open class BBImageSliderCollectionView: UIView {
             collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
         }
     }
-    @IBOutlet private weak var pageController: UIPageControl!
+    @IBOutlet weak var pageController: UIPageControl!
     
     public var imageUrls: [String] = []
     
