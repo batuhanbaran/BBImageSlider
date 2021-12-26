@@ -8,48 +8,48 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BBImageSliderCollectionView" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BBImageSliderCollectionView" customModule="BBImageSlider">
             <connections>
-                <outlet property="collectionView" destination="qff-Uz-Znq" id="P0t-1a-HJc"/>
-                <outlet property="pageController" destination="CW8-oC-iJd" id="muJ-y5-2Ks"/>
+                <outlet property="collectionView" destination="9nE-WC-MFh" id="eZb-PM-o3h"/>
+                <outlet property="pageController" destination="mPz-GW-eEz" id="jfm-OG-6rJ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="321" height="170"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qdj-JG-Mwo">
-                    <rect key="frame" x="12" y="12" width="297" height="157.5"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O14-EQ-aVl">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="157.5"/>
                     <subviews>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="qff-Uz-Znq">
-                            <rect key="frame" x="0.0" y="0.0" width="297" height="130"/>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9nE-WC-MFh">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="130" id="Rrp-fa-Fe9"/>
+                                <constraint firstAttribute="height" constant="130" id="KvE-iP-1rO"/>
                             </constraints>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eE2-ii-Hjf">
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZQX-Yx-3ZB">
                                 <size key="itemSize" width="128" height="128"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
-                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="CW8-oC-iJd">
-                            <rect key="frame" x="0.0" y="130" width="297" height="27.5"/>
+                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="mPz-GW-eEz">
+                            <rect key="frame" x="0.0" y="130" width="414" height="27.5"/>
                         </pageControl>
                     </subviews>
                 </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="qdj-JG-Mwo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="Dev-pw-go2"/>
-                <constraint firstAttribute="trailing" secondItem="qdj-JG-Mwo" secondAttribute="trailing" constant="12" id="cX5-3E-J1z"/>
-                <constraint firstItem="qdj-JG-Mwo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="iPM-2W-gy4"/>
+                <constraint firstItem="O14-EQ-aVl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4W3-NB-lD3"/>
+                <constraint firstItem="O14-EQ-aVl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7Fp-lu-0Sd"/>
+                <constraint firstAttribute="trailing" secondItem="O14-EQ-aVl" secondAttribute="trailing" id="POc-dc-sFq"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="64.492753623188406" y="251.78571428571428"/>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </view>
     </objects>
     <resources>
