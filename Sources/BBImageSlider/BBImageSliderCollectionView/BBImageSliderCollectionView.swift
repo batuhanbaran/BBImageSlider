@@ -32,7 +32,7 @@ open class BBImageSliderCollectionView: UIView {
     }
     
     private func configureView() {
-        guard let view = self.loadFromNib(nibName: "BBImageSliderCollectionView") else { return }
+        guard let view = BBImageSliderCollectionView.fromNib() else { return }
         view.frame = self.bounds
         self.addSubview(view)
         
