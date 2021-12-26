@@ -14,6 +14,9 @@ open class BBImageSliderCollectionView: UIView {
     // MARK:- IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .horizontal
+            collectionView.collectionViewLayout = layout
             collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
         }
     }
@@ -38,6 +41,8 @@ open class BBImageSliderCollectionView: UIView {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        collectionView.scrollDire
     }
 }
 
