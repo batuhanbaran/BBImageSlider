@@ -41,8 +41,6 @@ open class BBImageSliderCollectionView: UIView {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        collectionView.scrollDire
     }
 }
 
