@@ -40,6 +40,7 @@ open class BBImageSliderCollectionView: UIView {
             for view in self.subviews {
                 view.removeFromSuperview()
             }
+            configureView()
         }
     }
     
