@@ -23,7 +23,7 @@ open class BBImageSliderCollectionView: UIView {
             collectionView.dataSource = self
         }
     }
-    @IBOutlet weak var pageController: UIPageControl!
+    @IBOutlet public weak var pageController: UIPageControl!
     @IBOutlet weak var collectionViewHeighConstraint: NSLayoutConstraint!
     
     // MARK:- Constants
@@ -43,6 +43,8 @@ open class BBImageSliderCollectionView: UIView {
             configureView()
         }
     }
+    
+    public var imageContentMode: UIView.ContentMode = .scaleAspectFit
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,7 +74,7 @@ extension BBImageSliderCollectionView: UICollectionViewDataSource, UICollectionV
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.identifier, for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
-        cell.configure(with: imageUrls[indexPath.row])
+        cell.configure(with: imageUrls[indexPath.row], contentMode: imageContentMode)
         return cell
     }
     
@@ -92,4 +94,7 @@ extension BBImageSliderCollectionView: UICollectionViewDataSource, UICollectionV
         return 1
     }
     
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.pageController.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
 }

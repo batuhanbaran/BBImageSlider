@@ -48,8 +48,9 @@ open class ImageCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func configure(with imageUrl: String) {
+    func configure(with imageUrl: String, contentMode: UIView.ContentMode = .scaleAspectFit) {
         guard let url = URL(string: imageUrl) else { return }
         self.imageView.kf.setImage(with: url)
+        imageView.contentMode = contentMode
     }
 }
