@@ -18,11 +18,30 @@ open class BBImageSliderCollectionView: UIView {
             layout.scrollDirection = .horizontal
             collectionView.collectionViewLayout = layout
             collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
+            
+            collectionView.delegate = self
+            collectionView.dataSource = self
         }
     }
     @IBOutlet weak var pageController: UIPageControl!
+    @IBOutlet weak var collectionViewHeighConstraint: NSLayoutConstraint!
     
-    public var imageUrls: [String] = []
+    // MARK:- Constants
+    private enum Constants {
+        enum Height {
+            static let height: CGFloat = 170
+        }
+    }
+    
+    private var imageUrls: [String] = []
+    
+    public var imageSliderHeight: CGFloat = 130 {
+        didSet {
+            for view in self.subviews {
+                view.removeFromSuperview()
+            }
+        }
+    }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,12 +54,16 @@ open class BBImageSliderCollectionView: UIView {
     }
     
     private func configureView() {
+        self.bounds.size.height = imageSliderHeight + 40
         guard let view = self.loadFromNib(nibName: "BBImageSliderCollectionView") else { return }
         view.frame = self.bounds
+        collectionView.bounds.size.height = imageSliderHeight
         self.addSubview(view)
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
+    }
+    
+    public func setImageSources(with urls: [String]) {
+        self.imageUrls = urls
+        self.collectionView.reloadData()
     }
 }
 
