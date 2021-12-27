@@ -58,7 +58,7 @@ open class BBImageSliderCollectionView: UIView {
         self.bounds.size.height = imageSliderHeight + 40
         guard let view = self.loadFromNib(nibName: "BBImageSliderCollectionView") else { return }
         view.frame = self.bounds
-        collectionView.bounds.size.height = imageSliderHeight
+        collectionViewHeighConstraint.constant = imageSliderHeight
         self.addSubview(view)
     }
     
@@ -81,7 +81,7 @@ extension BBImageSliderCollectionView: UICollectionViewDataSource, UICollectionV
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.width, height: imageSliderHeight)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
