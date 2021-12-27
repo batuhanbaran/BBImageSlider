@@ -33,8 +33,10 @@ open class BBImageSliderCollectionView: UIView {
         }
     }
     
+    // MARK:- Private Properties
     private var imageUrls: [String] = []
     
+    // MARK:- Public Properties
     public var imageSliderHeight: CGFloat = 130 {
         didSet {
             for view in self.subviews {
@@ -45,6 +47,18 @@ open class BBImageSliderCollectionView: UIView {
     }
     
     public var imageContentMode: UIView.ContentMode = .scaleAspectFit
+    
+    public var pageIndicatorTintColor: UIColor = .white {
+        didSet {
+            pageController.pageIndicatorTintColor = pageIndicatorTintColor
+        }
+    }
+    
+    public var currentPageIndicatorTintColor: UIColor = .black {
+        didSet {
+            pageController.currentPageIndicatorTintColor = currentPageIndicatorTintColor
+        }
+    }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
