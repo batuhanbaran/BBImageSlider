@@ -12,7 +12,7 @@
             <connections>
                 <outlet property="collectionView" destination="9nE-WC-MFh" id="eZb-PM-o3h"/>
                 <outlet property="collectionViewHeighConstraint" destination="KvE-iP-1rO" id="xvU-Nq-eCP"/>
-                <outlet property="pageController" destination="mPz-GW-eEz" id="jfm-OG-6rJ"/>
+                <outlet property="stackView" destination="O14-EQ-aVl" id="iRz-dl-dwM"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O14-EQ-aVl">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="157.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9nE-WC-MFh">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
@@ -36,10 +36,6 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
-                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="8" translatesAutoresizingMaskIntoConstraints="NO" id="mPz-GW-eEz">
-                            <rect key="frame" x="0.0" y="130" width="414" height="27.5"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </pageControl>
                     </subviews>
                 </stackView>
             </subviews>

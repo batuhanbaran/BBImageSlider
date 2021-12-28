@@ -12,6 +12,7 @@ import UIKit
 open class BBImageSliderCollectionView: UIView {
     
     // MARK:- IBOutlets
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             let layout = UICollectionViewFlowLayout()
@@ -23,8 +24,13 @@ open class BBImageSliderCollectionView: UIView {
             collectionView.dataSource = self
         }
     }
-    @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var collectionViewHeighConstraint: NSLayoutConstraint!
+    
+    private lazy var pageController: UIPageControl = {
+        let pageController = UIPageControl()
+        pageController.numberOfPages = imageUrls.count
+        return pageController
+    }()
     
     // MARK:- Constants
     private enum Constants {
@@ -78,6 +84,7 @@ open class BBImageSliderCollectionView: UIView {
         self.bounds.size.height = imageSliderHeight + 40
         guard let view = self.loadFromNib(nibName: "BBImageSliderCollectionView") else { return }
         view.frame = self.bounds
+        self.stackView.addArrangedSubview(pageController)
         collectionViewHeighConstraint.constant = imageSliderHeight
         self.addSubview(view)
     }
@@ -85,12 +92,6 @@ open class BBImageSliderCollectionView: UIView {
     public func setImageSources(with urls: [String]) {
         self.imageUrls = urls
         self.collectionView.reloadData()
-    }
-    
-    open override func didAddSubview(_ subview: UIView) {
-        if subview == pageController {
-            pageController.numberOfPages = imageUrls.count
-        }
     }
 }
 
