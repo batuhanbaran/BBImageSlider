@@ -86,6 +86,12 @@ open class BBImageSliderCollectionView: UIView {
         self.imageUrls = urls
         self.collectionView.reloadData()
     }
+    
+    open override func didAddSubview(_ subview: UIView) {
+        if subview == pageController {
+            pageController.numberOfPages = imageUrls.count
+        }
+    }
 }
 
 extension BBImageSliderCollectionView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
