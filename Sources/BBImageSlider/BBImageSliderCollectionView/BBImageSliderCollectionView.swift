@@ -34,7 +34,11 @@ open class BBImageSliderCollectionView: UIView {
     }
     
     // MARK:- Private Properties
-    private var imageUrls: [String] = []
+    private var imageUrls: [String] = [] {
+        didSet {
+            pageController.numberOfPages = imageUrls.count
+        }
+    }
     
     // MARK:- Public Properties
     public var imageSliderHeight: CGFloat = 130 {
@@ -81,7 +85,6 @@ open class BBImageSliderCollectionView: UIView {
     public func setImageSources(with urls: [String]) {
         self.imageUrls = urls
         self.collectionView.reloadData()
-        self.pageController.numberOfPages = imageUrls.count
     }
 }
 
