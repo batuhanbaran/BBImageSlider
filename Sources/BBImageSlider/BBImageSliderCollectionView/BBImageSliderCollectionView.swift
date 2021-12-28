@@ -23,7 +23,7 @@ open class BBImageSliderCollectionView: UIView {
             collectionView.dataSource = self
         }
     }
-    @IBOutlet public weak var pageController: UIPageControl!
+    @IBOutlet weak var pageController: UIPageControl!
     @IBOutlet weak var collectionViewHeighConstraint: NSLayoutConstraint!
     
     // MARK:- Constants
