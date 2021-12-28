@@ -29,6 +29,7 @@ open class BBImageSliderCollectionView: UIView {
     private lazy var pageController: UIPageControl = {
         let pageController = UIPageControl()
         pageController.numberOfPages = imageUrls.count
+        pageController.hidesForSinglePage = true
         return pageController
     }()
     
@@ -45,6 +46,8 @@ open class BBImageSliderCollectionView: UIView {
             pageController.numberOfPages = imageUrls.count
         }
     }
+    
+    private var contentOffset: CGPoint = .zero
     
     // MARK:- Public Properties
     public var imageSliderHeight: CGFloat = 130 {
@@ -121,5 +124,33 @@ extension BBImageSliderCollectionView: UICollectionViewDataSource, UICollectionV
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.pageController.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
+    
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if collectionView.isBouncingRight {
+            DispatchQueue.main.async {
+                self.collectionView.isPagingEnabled = false
+                self.collectionView.scrollToItem(
+                    at: IndexPath(row: 0, section: 0),
+                    at: .centeredHorizontally,
+                    animated: true
+                )
+                self.collectionView.isPagingEnabled = true
+                self.pageController.currentPage = 0
+            }
+        }
+        
+        else if collectionView.isBouncingLeft {
+            DispatchQueue.main.async {
+                self.collectionView.isPagingEnabled = false
+                self.collectionView.scrollToItem(
+                    at: IndexPath(row: (self.imageUrls.count - 1), section: 0),
+                    at: .centeredHorizontally,
+                    animated: true
+                )
+                self.collectionView.isPagingEnabled = true
+                self.pageController.currentPage = self.imageUrls.count - 1
+            }
+        }
     }
 }
