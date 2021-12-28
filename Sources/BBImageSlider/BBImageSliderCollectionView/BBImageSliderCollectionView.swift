@@ -81,12 +81,7 @@ open class BBImageSliderCollectionView: UIView {
     public func setImageSources(with urls: [String]) {
         self.imageUrls = urls
         self.collectionView.reloadData()
-        
-        if imageUrls.count > 1 {
-            self.pageController.numberOfPages = imageUrls.count
-        } else {
-            self.pageController.numberOfPages = 0
-        }
+        self.pageController.numberOfPages = imageUrls.count
     }
 }
 
