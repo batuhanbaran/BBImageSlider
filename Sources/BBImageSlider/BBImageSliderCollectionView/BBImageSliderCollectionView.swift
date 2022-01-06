@@ -28,6 +28,7 @@ open class BBImageSliderCollectionView: UIView {
     
     private lazy var pageController: UIPageControl = {
         let pageController = UIPageControl()
+        pageController.translatesAutoresizingMaskIntoConstraints = false
         pageController.numberOfPages = imageUrls.count
         pageController.hidesForSinglePage = true
         return pageController
@@ -89,6 +90,7 @@ open class BBImageSliderCollectionView: UIView {
         view.frame = self.bounds
         self.stackView.addArrangedSubview(pageController)
         collectionViewHeighConstraint.constant = imageSliderHeight
+        pageController.heightAnchor.constraint(equalToConstant: 30).isActive = true
         self.addSubview(view)
     }
     
