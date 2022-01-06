@@ -111,7 +111,7 @@ extension BBImageSliderCollectionView: UICollectionViewDataSource, UICollectionV
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: imageSliderHeight + pageController.frame.height)
+        return CGSize(width: collectionView.frame.width, height: self.bounds.size.height)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
