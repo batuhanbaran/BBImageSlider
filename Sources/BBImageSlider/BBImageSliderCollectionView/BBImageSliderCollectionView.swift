@@ -84,7 +84,7 @@ open class BBImageSliderCollectionView: UIView {
     }
     
     private func configureView() {
-        self.bounds.size.height = imageSliderHeight + 40
+        self.bounds.size.height = imageSliderHeight + pageController.frame.height
         guard let view = self.loadFromNib(nibName: "BBImageSliderCollectionView") else { return }
         view.frame = self.bounds
         self.stackView.addArrangedSubview(pageController)
